@@ -1,0 +1,35 @@
+{
+  "coord": { "lon": 19.13, "lat": 47.53 },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 290.89,
+    "feels_like": 290.05,
+    "temp_min": 287.35,
+    "temp_max": 292.42,
+    "pressure": 1020,
+    "humidity": 51
+  },
+  "visibility": 10000,
+  "wind": { "speed": 2.68, "deg": 8, "gust": 7.6 },
+  "clouds": { "all": 75 },
+  "dt": 1663767658,
+  "sys": {
+    "type": 2,
+    "id": 2009661,
+    "country": "HU",
+    "sunrise": 1663734510,
+    "sunset": 1663778693
+  },
+  "timezone": 7200,
+  "id": 7284829,
+  "name": "Budapest XIV. keruelet",
+  "cod": 200
+}
