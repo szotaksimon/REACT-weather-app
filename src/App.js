@@ -17,6 +17,12 @@ function App() {
     }
   };
 
+  // const szavak = {
+  //   'rain': 'eső',
+  //   'sun': 'nap'
+  // }
+  // const result = szavak['rain']
+
   return (
     <div className="App">
       <div className="search">
@@ -30,9 +36,10 @@ function App() {
       </div>
       <div className="container">
         <div className="top">
-          <div className="location">
-            <p>{data.name}</p>
+          <div className={styles.fosfasz}>
+            <p>Mérve: {data.dt ? new Date(data.dt * 1000).toLocaleString() : '...'}</p>
           </div>
+
           <div className="temp">
             {data.main ? <h1>{data.main.temp}°C</h1> : null}
           </div>
