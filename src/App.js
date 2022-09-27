@@ -36,7 +36,7 @@ function App() {
       </div>
       <div className="container">
         <div className="top">
-          <div className={styles.fosfasz}>
+          <div className="measured">
             <p>Mérve: {data.dt ? new Date(data.dt * 1000).toLocaleString() : '...'}</p>
           </div>
 

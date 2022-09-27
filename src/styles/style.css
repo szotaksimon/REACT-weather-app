@@ -5,22 +5,17 @@
   overflow: hidden;
 }
 
-
 body {
   margin: 0;
-  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Outfit", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-p {
+body p {
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8)
+  color: rgba(255, 255, 255, 0.8);
 }
-
-h1 {
+body h1 {
   font-size: 6rem;
 }
 
@@ -31,26 +26,18 @@ h1 {
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
 }
-
-.App:before {
-  content: '';
-  background: url('./assets/coldsunset.jpg') no-repeat center center/cover;
+.App::before {
+  content: "";
+  background: url("../assets/coldsunset.jpg") no-repeat center center/cover;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: -1;
-
 }
-
-.search {
-  text-align: center;
-  padding: 1rem;
-}
-
 .App input {
-  padding: .7rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   font-size: 1.2rem;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.26);
@@ -59,18 +46,23 @@ h1 {
   text-decoration: none;
   outline: none;
 }
-
 .App input:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-
-
-
-::placeholder{
-  color: #f8f8f8;
+.App .search {
+  text-align: center;
+  padding: 1rem;
 }
-
-.container {
+.App .search ::-moz-placeholder {
+  color: #db7b7b;
+}
+.App .search :-ms-input-placeholder {
+  color: #db7b7b;
+}
+.App .search ::placeholder {
+  color: #db7b7b;
+}
+.App .container {
   max-width: 700px;
   height: 700px;
   margin: auto;
@@ -80,37 +72,33 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
-
-.App .top {
+.App .container .top {
   width: 100%;
   margin: 1rem auto;
   text-align: center;
   color: rgba(0, 0, 0, 0.562);
-
 }
-
-.App .bottom {
+.App .container .top .measured p {
+  color: rgba(245, 245, 245, 0.979);
+  font-size: 2rem;
+}
+.App .container .bottom {
   display: flex;
   justify-content: space-between;
   text-align: center;
   width: 100%;
   margin: 1rem auto;
   padding: 1.2rem;
-  padding-inline-start: 2rem;
-  padding-inline-end: 2rem;
+  -webkit-padding-start: 2rem;
+          padding-inline-start: 2rem;
+  -webkit-padding-end: 2rem;
+          padding-inline-end: 2rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.103);
 }
-
-.bold {
+.App .container .bottom .bold {
   font-weight: 600;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.747);
-}
-
-.location p{
-  color: rgba(255, 255, 255, 0.979);
-  font-size: 2rem;
-}
+}/*# sourceMappingURL=style.css.map */
