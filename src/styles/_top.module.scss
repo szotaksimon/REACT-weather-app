@@ -1,0 +1,20 @@
+.top {
+    width: 100%;
+    height: max-content;
+    margin: 1rem auto;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.600);
+    .time {
+      flex-direction: column;
+      justify-content:flex-end;
+      h1 {
+        color: white;
+      }
+    }
+    .location {
+      p{
+        color: rgba(255, 255, 255, 0.979);
+        font-size: 2rem;
+      }
+    }
+  }

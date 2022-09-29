@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import classes from "./styles/style.module.scss";
+
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=03c029603987f9fd2ff2b1e5933057d6&units=metric`;
+  let timestamp = data.dt;
+  let current_time = new Date(timestamp * 1000);
+
+
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=03c029603987f9fd2ff2b1e5933057d6&lang=hu&units=metric`;
   // const url = `https://api.openweathermap.org/data/2.5/weather?q=budapest&appid=03c029603987f9fd2ff2b1e5933057d6&units=metric`;
 
   const searchLocation = (event) => {
@@ -17,15 +24,9 @@ function App() {
     }
   };
 
-  // const szavak = {
-  //   'rain': 'eső',
-  //   'sun': 'nap'
-  // }
-  // const result = szavak['rain']
-
   return (
-    <div className="App">
-      <div className="search">
+    <div className={classes.App}>
+      <div className={classes.search}>
         <input
           value={location}
           onChange={(event) => setLocation(event.target.value)}
@@ -34,30 +35,40 @@ function App() {
           type="text"
         />
       </div>
-      <div className="container">
-        <div className="top">
-          <div className="measured">
-            <p>Mérve: {data.dt ? new Date(data.dt * 1000).toLocaleString() : '...'}</p>
+      <div className={classes.container}>
+        <div className={classes.top}>
+          <div className={classes.location}>
+            <p>{data.name}</p>
           </div>
-
-          <div className="temp">
+          <div className={classes.temp}>
             {data.main ? <h1>{data.main.temp}°C</h1> : null}
           </div>
-          <div className="description">
-            {data.weather ? <p>{data.weather[0].main}</p> : null}
+          <div className={classes.time}>
+          </div>
+          <div className={classes.description}>
+            {data.weather ? (
+              <p className={classes.discriptionptag}>
+                {data.weather[0].description}
+              </p>
+            ) : null}
+          </div>
+          <div className={classes.time}>
+            {data.main ? <h2>ekkor mérve: {current_time.toLocaleString()}</h2> : null}
           </div>
         </div>
-        <div className="bottom">
-          <div className="feels">
-            {data.main ? <p className="bold">{data.main.feels_like}°C</p> : null}
+        <div className={classes.bottom}>
+          <div className={classes.feels}>
+            {data.main ? (
+              <p className={classes.bold}>{data.main.feels_like}°C</p>
+            ) : null}
             <p>Hőérzet</p>
           </div>
-          <div className="humidity">
-            {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+          <div className={classes.humidity}>
+            {data.main ? <p className={classes.bold}>{data.main.humidity}%</p> : null}
             <p>Páratartalom</p>
           </div>
-          <div className="wind">
-            {data.main ? <p className="bold">{data.wind.speed}KM/H</p> : null}
+          <div className={classes.wind}>
+            {data.main ? <p className={classes.bold}>{data.wind.speed}KM/H</p> : null}
             <p>Szélerősség</p>
           </div>
         </div>

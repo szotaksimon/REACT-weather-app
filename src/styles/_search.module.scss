@@ -1,0 +1,20 @@
+.search {
+  text-align: center;
+  padding: 1rem;
+  input {
+      padding: .7rem 1.5rem;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      background: rgba(255, 255, 255, 0.048);
+      color: white;
+      text-decoration: none;
+      outline: none;
+      &:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      &::placeholder{
+          color: #f8f8f8;
+        }
+  }
+}
