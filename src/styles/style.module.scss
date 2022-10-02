@@ -15,6 +15,7 @@
     font-family:monospace;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
   }
   
   p {
@@ -32,6 +33,11 @@
     position: relative;
     background-color: rgba(0, 0, 0, 0.1);
     color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     &:before {
         content: '';
         background: url('../assets/mountain.jpg') no-repeat center center/cover;
